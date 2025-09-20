@@ -4,7 +4,7 @@
     <div class="flat-background">
       <div class="geometric-pattern"></div>
     </div>
-    
+
     <!-- Main Content -->
     <div class="container">
       <!-- Section Header -->
@@ -13,25 +13,25 @@
         <div class="header-icon slide-up-element" data-delay="0.05">
           <i class="fas fa-quote-right"></i>
         </div>
-        
+
         <!-- Section Title -->
         <h2 class="section-title slide-up-element" data-delay="0.1">
-          What Our Clients Say
+          {{ $t("sections.whatCustomersSay") }}
         </h2>
-        
+
         <!-- Section Subtitle -->
         <p class="section-subtitle slide-up-element" data-delay="0.15">
-          Real feedback from satisfied customers
+          {{ $t("sections.whatCustomersSaySubtitle") }}
         </p>
       </div>
-      
+
       <!-- Testimonials Grid -->
       <div class="testimonials-grid">
         <div
-          v-for="(testimonial, index) in testimonials"
+          v-for="(testimonial, index) in $t('simpleComponents.testimonials')"
           :key="index"
           class="testimonial-card flat-card slide-up-element"
-          :data-delay="0.8 + (index * 0.1)"
+          :data-delay="0.8 + index * 0.1"
         >
           <div class="testimonial-content">
             <div class="quote-icon">
@@ -56,41 +56,41 @@
 
 <script>
 export default {
-  name: 'SimpleTestimonial',
+  name: "SimpleTestimonial",
   data() {
     return {
       testimonials: [
         {
           text: "ESmart Solutions helped us increase website traffic by 300% and online revenue by 150%. The team is extremely professional!",
           name: "John Smith",
-          position: "CEO"
+          position: "CEO",
         },
         {
           text: "ESmart's SEO service is truly effective. Our website reached TOP 3 on Google in just 3 months.",
           name: "Sarah Johnson",
-          position: "Marketing Manager"
+          position: "Marketing Manager",
         },
         {
           text: "Beautiful, modern website design with optimized user experience. Very satisfied with the results!",
           name: "Michael Brown",
-          position: "Founder"
+          position: "Founder",
         },
         {
           text: "ESmart's marketing campaign helped our brand become more widely recognized.",
           name: "Emily Davis",
-          position: "Brand Manager"
+          position: "Brand Manager",
         },
         {
           text: "ESmart's customized CRM system optimized our sales process, increasing efficiency by 200%.",
           name: "David Wilson",
-          position: "Sales Director"
+          position: "Sales Director",
         },
         {
           text: "The marketing automation project saved us 60% time and increased quality leads by 180%.",
           name: "Lisa Anderson",
-          position: "Marketing Head"
-        }
-      ]
+          position: "Marketing Head",
+        },
+      ],
     };
   },
   mounted() {
@@ -98,25 +98,28 @@ export default {
   },
   methods: {
     initSlideUpAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const delay = parseFloat(entry.target.dataset.delay) || 0;
-            setTimeout(() => {
-              entry.target.classList.add('animate-in');
-            }, delay * 1000);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = parseFloat(entry.target.dataset.delay) || 0;
+              setTimeout(() => {
+                entry.target.classList.add("animate-in");
+              }, delay * 1000);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
 
       // Observe all slide-up elements
-      const slideUpElements = document.querySelectorAll('.slide-up-element');
-      slideUpElements.forEach(el => observer.observe(el));
-    }
-  }
+      const slideUpElements = document.querySelectorAll(".slide-up-element");
+      slideUpElements.forEach((el) => observer.observe(el));
+    },
+  },
 };
 </script>
 
@@ -145,10 +148,22 @@ export default {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-    linear-gradient(45deg, transparent 48%, rgba(59, 130, 246, 0.02) 50%, transparent 52%);
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(59, 130, 246, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(59, 130, 246, 0.03) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(59, 130, 246, 0.02) 50%,
+      transparent 52%
+    );
 }
 
 .container {
@@ -180,7 +195,7 @@ export default {
 }
 
 .section-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #1e293b;
@@ -189,7 +204,7 @@ export default {
 }
 
 .section-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   color: #64748b;
   line-height: 1.6;
@@ -216,7 +231,7 @@ export default {
 }
 
 .testimonial-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -257,7 +272,7 @@ export default {
 }
 
 .testimonial-text {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   color: #475569;
   line-height: 1.7;
@@ -288,7 +303,7 @@ export default {
 }
 
 .author-name {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e293b;
@@ -296,7 +311,7 @@ export default {
 }
 
 .author-position {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   color: #64748b;
   margin: 0;
@@ -316,9 +331,15 @@ export default {
 }
 
 /* Staggered Animation Delays */
-.slide-up-element[data-delay="0.05"] { transition-delay: 0.05s; }
-.slide-up-element[data-delay="0.1"] { transition-delay: 0.1s; }
-.slide-up-element[data-delay="0.15"] { transition-delay: 0.15s; }
+.slide-up-element[data-delay="0.05"] {
+  transition-delay: 0.05s;
+}
+.slide-up-element[data-delay="0.1"] {
+  transition-delay: 0.1s;
+}
+.slide-up-element[data-delay="0.15"] {
+  transition-delay: 0.15s;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -326,11 +347,11 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
   }
-  
+
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .testimonial-card {
     padding: 35px;
   }
@@ -340,24 +361,24 @@ export default {
   .simple-testimonial {
     padding: 80px 0;
   }
-  
+
   .section-title {
     font-size: 2.2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .testimonials-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .testimonial-card {
     padding: 30px;
   }
-  
+
   .header-icon {
     width: 60px;
     height: 60px;
@@ -369,29 +390,29 @@ export default {
   .simple-testimonial {
     padding: 60px 0;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .section-subtitle {
     font-size: 1rem;
   }
-  
+
   .testimonial-card {
     padding: 25px;
   }
-  
+
   .testimonial-text {
     font-size: 1rem;
   }
-  
+
   .author-name {
     font-size: 1rem;
   }
-  
+
   .author-position {
     font-size: 0.8rem;
   }
 }
-</style> 
+</style>
