@@ -82,7 +82,6 @@
   "aiCreator": "AI Creator",
   "assessment": "Đánh giá",
   "achievements": "Thành tựu",
-  "blog": "Blog",
   "blogPage1": "Trang Blog 1",
   "products": "Sản phẩm",
   "AboutUs": "Về Chúng Tôi",
@@ -419,6 +418,14 @@
       "conversation": "CUỘC TRÒ CHUYỆN",
       "startYourDream": "BẮT ĐẦU ƯỚC MƠ CỦA BẠN"
     },
+    "aboutUs": {
+      "readyTo": "SẴN SÀNG",
+      "make": "KIẾM",
+      "cash": "TIỀN?",
+      "subMessage": "Hãy biến ý tưởng của bạn thành hiện thực sinh lời",
+      "startProject": "BẮT ĐẦU DỰ ÁN",
+      "learnMore": "TÌM HIỂU THÊM"
+    },
     "features": {
       "title": "GIẢI PHÁP CHIẾN LƯỢC CHO TĂNG TRƯỞNG DOANH NGHIỆP",
       "description1": "Chúng tôi mang đến <span class=\"highlight\">kết quả đo lường được</span> giúp thúc đẩy doanh nghiệp của bạn tiến lên.",
@@ -484,7 +491,7 @@
       "copyright": "© 2024 ESmart Solutions Agency. Tất cả quyền được bảo lưu.",
       "form": {
         "name": "Tên",
-        "nameePlaceholder": "Nhập tên của bạn",
+        "namePlaceholder": "Nhập tên của bạn",
         "email": "Email",
         "emailPlaceholder": "Nhập địa chỉ email của bạn",
         "phone": "Điện thoại",
@@ -528,8 +535,25 @@
         "other": "Khác",
         "next": "Tiếp theo",
         "previous": "Trước đó",
-        "submit": "Gửi Đánh giá"
+        "submit": "Gửi Đánh giá",
+        "marketingGoals": "Mục tiêu Marketing",
+        "marketingGoalsPlaceholder": "Mục tiêu marketing chính của bạn là gì? (ví dụ: tăng nhận biết thương hiệu, tạo thêm khách hàng tiềm năng, cải thiện tỷ lệ chuyển đổi)",
+        "currentChallenges": "Thách thức Hiện tại",
+        "challengesPlaceholder": "Bạn đang gặp những thách thức marketing nào?"
       }
+    },
+    "benefits": {
+      "analysisReport": "Báo cáo phân tích toàn diện",
+      "strategicRecommendations": "Khuyến nghị chiến lược",
+      "actionableRoadmap": "Lộ trình hành động cụ thể"
+    },
+    "brandingPerformance": {
+      "title1": "KHÔNG CÒN THẤT BẠI",
+      "title2": "CHỈ CÓ TIỀN THẬT",
+      "subtitle": "Bạn không cần thêm một chiến dịch khó có thể thành công nữa.",
+      "highlightSubtitle": "Bạn cần một đối tác marketing làm cho quầy thu ngân kêu leng keng.",
+      "primaryCta": "HÃY ĐỂ CHÚNG TÔI KIẾM TIỀN CHO BẠN",
+      "secondaryCta": "Hãy nói chuyện"
     }
   },
   "blog": {

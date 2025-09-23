@@ -663,6 +663,14 @@
       "conversation": "CONVERSATION",
       "startYourDream": "START YOUR DREAM"
     },
+    "aboutUs": {
+      "readyTo": "READY TO",
+      "make": "MAKE",
+      "cash": "CASH?",
+      "subMessage": "Let's turn your ideas into profitable reality",
+      "startProject": "START PROJECT",
+      "learnMore": "LEARN MORE"
+    },
     "features": {
       "title": "STRATEGIC SOLUTIONS FOR BUSINESS GROWTH",
       "description1": "We deliver <span class=\"highlight\">measurable results</span> that drive your business forward.",
@@ -772,8 +780,25 @@
         "other": "Other",
         "next": "Next",
         "previous": "Previous",
-        "submit": "Submit Assessment"
+        "submit": "Submit Assessment",
+        "marketingGoals": "Marketing Goals",
+        "marketingGoalsPlaceholder": "What are your main marketing objectives? (e.g., increase brand awareness, generate more leads, improve conversion rates)",
+        "currentChallenges": "Current Challenges",
+        "challengesPlaceholder": "What marketing challenges are you currently facing?"
       }
+    },
+    "benefits": {
+      "analysisReport": "Comprehensive analysis report",
+      "strategicRecommendations": "Strategic recommendations",
+      "actionableRoadmap": "Actionable roadmap"
+    },
+    "brandingPerformance": {
+      "title1": "NO MORE FLOOP",
+      "title2": "JUST MORE CASH",
+      "subtitle": "You don't need another nice-to-have campaign.",
+      "highlightSubtitle": "You need a marketing partner that makes the cash register ring.",
+      "primaryCta": "LET US MAKE YOU CASH",
+      "secondaryCta": "Let's talk"
     }
   },
   "blog": {

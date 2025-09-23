@@ -41,12 +41,16 @@
         <div class="form-card">
           <h3
             class="form-title typing-text"
-            data-text="Ready to Transform Your Business?"
-          >{{ $t("simpleComponents.assessment.formTitle") }}</h3>
+            :data-text="$t('simpleComponents.assessment.formTitle')"
+          >
+            {{ $t("simpleComponents.assessment.formTitle") }}
+          </h3>
           <p
             class="form-description typing-text"
-            data-text="Discover how our strategic approach can drive real results for your business. Get insights, recommendations, and a clear roadmap to success."
-          ></p>
+            :data-text="$t('simpleComponents.assessment.formDescription')"
+          >
+            {{ $t("simpleComponents.assessment.formDescription") }}
+          </p>
 
           <!-- Progress Indicator -->
           <div class="form-progress">
@@ -58,7 +62,11 @@
               }"
             >
               <div class="step-number">1</div>
-              <span class="step-label">Personal Info</span>
+              <span class="step-label">
+                <span class="step-label">
+                  {{ $t("simpleComponents.assessment.personalInfo") }}</span
+                >
+              </span>
             </div>
             <div
               class="progress-line"
@@ -73,7 +81,11 @@
               }"
             >
               <div class="step-number">2</div>
-              <span class="step-label">Business Details</span>
+              <span class="step-label">
+                <span class="step-label">{{
+                  $t("simpleComponents.assessment.businessDetails")
+                }}</span>
+              </span>
             </div>
           </div>
 
@@ -85,42 +97,59 @@
             <!-- Section 1: Personal Information -->
             <div v-show="currentSection === 1" class="form-section">
               <div class="section-header-small">
-                <h4 class="section-title-small">Personal Information</h4>
+                <span class="step-label">{{
+                  $t("simpleComponents.assessment.personalInfo")
+                }}</span>
+                <h4 class="section-title-small"></h4>
                 <p class="section-description-small">
-                  Let's start with your basic contact details
+                  <span class="step-label">{{
+                    $t("simpleComponents.assessment.personalInfoDesc")
+                  }}</span>
                 </p>
               </div>
 
               <div class="form-fields">
                 <div class="form-row">
-                  <label for="name">Full Name</label>
+                  <label for="name">{{
+                    $t("simpleComponents.assessment.form.fullName")
+                  }}</label>
                   <input
                     type="text"
                     id="name"
                     v-model="formData.name"
-                    placeholder="Enter your full name"
+                    :placeholder="
+                      $t('simpleComponents.assessment.form.fullNamePlaceholder')
+                    "
                     required
                   />
                 </div>
 
                 <div class="form-row">
-                  <label for="email">Email Address</label>
+                  <label for="email">{{
+                    $t("simpleComponents.assessment.form.emailAddress")
+                  }}</label>
                   <input
                     type="email"
                     id="email"
                     v-model="formData.email"
-                    placeholder="Enter your email address"
+                    :placeholder="
+                      $t('simpleComponents.assessment.form.emailPlaceholder')
+                    "
                     required
                   />
                 </div>
 
                 <div class="form-row">
-                  <label for="phone">Phone Number</label>
+                  <label for="phone">{{
+                    $t("simpleComponents.assessment.form.phoneNumber")
+                  }}</label>
                   <input
                     type="tel"
                     id="phone"
                     v-model="formData.phone"
-                    placeholder="Enter your phone number"
+                    :placeholder="
+                      $t('simpleComponents.assessment.form.phonePlaceholder')
+                    "
                   />
                 </div>
               </div>
@@ -132,7 +161,7 @@
                   @click="nextSection"
                   :disabled="!canProceedToNext"
                 >
-                  <span>Next</span>
+                  <span>{{ $t("simpleComponents.assessment.form.next") }}</span>
                   <i class="fas fa-arrow-right"></i>
                 </button>
               </div>
@@ -141,64 +170,114 @@
             <!-- Section 2: Business Details -->
             <div v-show="currentSection === 2" class="form-section">
               <div class="section-header-small">
-                <h4 class="section-title-small">Business Details</h4>
+                <h4 class="section-title-small">
+                  {{ $t("simpleComponents.assessment.businessDetails") }}
+                </h4>
                 <p class="section-description-small">
-                  Tell us more about your business and goals
+                  {{ $t("simpleComponents.assessment.businessDetailsDesc") }}
                 </p>
               </div>
 
               <div class="form-fields">
                 <div class="form-row">
-                  <label for="company">Company Name</label>
+                  <label for="company">{{
+                    $t("simpleComponents.assessment.form.companyName")
+                  }}</label>
                   <input
                     type="text"
                     id="company"
                     v-model="formData.company"
-                    placeholder="Enter your company name"
+                    :placeholder="
+                      $t('simpleComponents.assessment.form.companyPlaceholder')
+                    "
                   />
                 </div>
 
                 <div class="form-row">
-                  <label for="website">Website URL</label>
+                  <label for="website">{{
+                    $t("simpleComponents.assessment.form.websiteUrl")
+                  }}</label>
                   <input
                     type="url"
                     id="website"
                     v-model="formData.website"
-                    placeholder="https://yourwebsite.com"
+                    :placeholder="
+                      $t('simpleComponents.assessment.form.websitePlaceholder')
+                    "
                   />
                 </div>
 
                 <div class="form-row">
-                  <label for="industry">Industry</label>
+                  <label for="industry">{{
+                    $t("simpleComponents.assessment.form.industry")
+                  }}</label>
                   <select id="industry" v-model="formData.industry">
-                    <option value="">Select your industry</option>
-                    <option value="ecommerce">E-commerce</option>
-                    <option value="saas">SaaS/Tech</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="finance">Finance</option>
-                    <option value="education">Education</option>
-                    <option value="real-estate">Real Estate</option>
-                    <option value="consulting">Consulting</option>
-                    <option value="other">Other</option>
+                    <option value="">
+                      {{
+                        $t("simpleComponents.assessment.form.selectIndustry")
+                      }}
+                    </option>
+                    <option value="ecommerce">
+                      {{ $t("simpleComponents.assessment.form.ecommerce") }}
+                    </option>
+                    <option value="saas">
+                      {{ $t("simpleComponents.assessment.form.saas") }}
+                    </option>
+                    <option value="healthcare">
+                      {{ $t("simpleComponents.assessment.form.healthcare") }}
+                    </option>
+                    <option value="finance">
+                      {{ $t("simpleComponents.assessment.form.finance") }}
+                    </option>
+                    <option value="education">
+                      {{ $t("simpleComponents.assessment.form.education") }}
+                    </option>
+                    <option value="real-estate">
+                      {{ $t("simpleComponents.assessment.form.realEstate") }}
+                    </option>
+                    <option value="consulting">
+                      {{ $t("simpleComponents.assessment.form.consulting") }}
+                    </option>
+                    <option value="manufacturing">
+                      {{ $t("simpleComponents.assessment.form.manufacturing") }}
+                    </option>
+                    <option value="retail">
+                      {{ $t("simpleComponents.assessment.form.retail") }}
+                    </option>
+                    <option value="other">
+                      {{ $t("simpleComponents.assessment.form.other") }}
+                    </option>
                   </select>
                 </div>
 
                 <div class="form-row">
-                  <label for="goals">Marketing Goals</label>
+                  <label for="goals">{{
+                    $t("simpleComponents.assessment.form.marketingGoals")
+                  }}</label>
                   <textarea
                     id="goals"
                     v-model="formData.goals"
-                    placeholder="What are your main marketing objectives? (e.g., increase brand awareness, generate more leads, improve conversion rates)"
+                    :placeholder="
+                      $t(
+                        'simpleComponents.assessment.form.marketingGoalsPlaceholder'
+                      )
+                    "
                     rows="4"
                   ></textarea>
                 </div>
 
                 <div class="form-row">
-                  <label for="challenges">Current Challenges</label>
+                  <label for="challenges">{{
+                    $t("simpleComponents.assessment.form.currentChallenges")
+                  }}</label>
                   <textarea
                     id="challenges"
                     v-model="formData.challenges"
-                    placeholder="What marketing challenges are you currently facing?"
+                    :placeholder="
+                      $t(
+                        'simpleComponents.assessment.form.challengesPlaceholder'
+                      )
+                    "
                     rows="3"
                   ></textarea>
                 </div>
@@ -207,11 +286,15 @@
               <div class="form-actions">
                 <button type="button" class="back-btn" @click="previousSection">
                   <i class="fas fa-arrow-left"></i>
-                  <span>Back</span>
+                  <span>{{
+                    $t("simpleComponents.assessment.form.previous")
+                  }}</span>
                 </button>
                 <button type="submit" class="submit-btn">
                   <i class="fas fa-rocket"></i>
-                  <span>Get Free Assessment</span>
+                  <span>{{
+                    $t("simpleComponents.assessment.form.submit")
+                  }}</span>
                 </button>
               </div>
             </div>
@@ -220,15 +303,19 @@
           <div class="form-benefits">
             <div class="benefit-item">
               <i class="fas fa-check-circle"></i>
-              <span>Comprehensive analysis report</span>
+              <span>{{ $t("simpleComponents.benefits.analysisReport") }}</span>
             </div>
             <div class="benefit-item">
               <i class="fas fa-check-circle"></i>
-              <span>Strategic recommendations</span>
+              <span>{{
+                $t("simpleComponents.benefits.strategicRecommendations")
+              }}</span>
             </div>
             <div class="benefit-item">
               <i class="fas fa-check-circle"></i>
-              <span>Actionable roadmap</span>
+              <span>{{
+                $t("simpleComponents.benefits.actionableRoadmap")
+              }}</span>
             </div>
           </div>
         </div>
@@ -243,32 +330,44 @@
           <h2 class="main-title">
             <span
               class="title-line-1 typing-text"
-              data-text="NO MORE FLOOP"
-            ></span>
+              :data-text="$t('simpleComponents.brandingPerformance.title1')"
+              >{{ $t("simpleComponents.brandingPerformance.title1") }}</span
+            >
             <span
               class="title-line-2 typing-text"
-              data-text="JUST MORE CASH"
-            ></span>
+              :data-text="$t('simpleComponents.brandingPerformance.title2')"
+              >{{ $t("simpleComponents.brandingPerformance.title2") }}</span
+            >
           </h2>
           <div class="description-container">
             <p
               class="subtitle typing-text"
-              data-text="You don't need another nice-to-have campaign."
-            ></p>
+              :data-text="$t('simpleComponents.brandingPerformance.subtitle')"
+            >
+              {{ $t("simpleComponents.brandingPerformance.subtitle") }}
+            </p>
             <p
               class="highlight-subtitle typing-text"
-              data-text="You need a marketing partner that makes the cash register ring."
-            ></p>
+              :data-text="
+                $t('simpleComponents.brandingPerformance.highlightSubtitle')
+              "
+            >
+              {{ $t("simpleComponents.brandingPerformance.highlightSubtitle") }}
+            </p>
           </div>
 
           <div class="cta-container">
             <button class="hero-cta-button" @click="startAssessment">
-              <span class="cta-text">LET US MAKE YOU CASH</span>
+              <span class="cta-text">{{
+                $t("simpleComponents.brandingPerformance.primaryCta")
+              }}</span>
               <div class="wave-effect"></div>
             </button>
 
             <button class="secondary-cta-button" @click="startAssessment">
-              <span>Let's talk</span>
+              <span>{{
+                $t("simpleComponents.brandingPerformance.secondaryCta")
+              }}</span>
               <i class="fas fa-arrow-up"></i>
             </button>
           </div>
@@ -303,6 +402,7 @@ export default {
       },
       typingElements: [],
       scrollObserver: null,
+      resizeTimeout: null,
     };
   },
   computed: {
@@ -315,15 +415,38 @@ export default {
       return true;
     },
   },
+  watch: {
+    // Watch for language changes and re-initialize typing effect
+    "$i18n.locale"() {
+      this.$nextTick(() => {
+        // Give Vue more time to update the DOM attributes
+        setTimeout(() => {
+          // Clear any existing typing effects
+          const typingElements = document.querySelectorAll(".typing-text");
+          typingElements.forEach((element) => {
+            element.textContent = "";
+          });
+
+          // Re-initialize typing effect with updated translations
+          this.initTypingEffect();
+        }, 200);
+      });
+    },
+  },
   mounted() {
     this.initSlideUpAnimations();
     this.initTypingEffect();
     this.initScrollAnimations();
+
+    // Add resize listener to handle screen size changes
+    window.addEventListener("resize", this.handleResize);
   },
   beforeUnmount() {
     if (this.scrollObserver) {
       this.scrollObserver.disconnect();
     }
+    // Remove resize listener
+    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
     nextSection() {
@@ -400,8 +523,32 @@ export default {
     initTypingEffect() {
       this.typingElements = document.querySelectorAll(".typing-text");
       this.typingElements.forEach((element, index) => {
-        const text = element.dataset.text;
+        // Always get fresh text from data-text attribute (important for language changes)
+        const text = element.getAttribute("data-text") || element.dataset.text;
         element.textContent = "";
+
+        // Check if this is a form description element
+        const isFormDescription =
+          element.classList.contains("form-description");
+
+        // Set initial styles for responsive text
+        element.style.width = "auto";
+        element.style.minWidth = "fit-content";
+        element.style.maxWidth = "100%";
+        element.style.overflow = "visible";
+
+        // Handle form descriptions differently to prevent overflow
+        if (isFormDescription) {
+          element.style.whiteSpace = "normal";
+          element.style.wordWrap = "break-word";
+          element.style.overflowWrap = "break-word";
+          element.style.hyphens = "auto";
+          element.style.textAlign = "center";
+          element.style.padding = "0 15px";
+          element.style.boxSizing = "border-box";
+        } else {
+          element.style.whiteSpace = "nowrap";
+        }
 
         setTimeout(() => {
           this.typeText(element, text, 0);
@@ -411,10 +558,72 @@ export default {
     typeText(element, text, index) {
       if (index < text.length) {
         element.textContent += text.charAt(index);
+
+        // Check if this is a form description
+        const isFormDescription =
+          element.classList.contains("form-description");
+
+        // Dynamically adjust container width as text is typed
+        element.style.width = "auto";
+        element.style.minWidth = "fit-content";
+
+        // Check if text is overflowing and adjust if needed
+        const parent = element.closest(
+          ".section-title, .main-title, .form-title, .form-card"
+        );
+
+        if (parent && !isFormDescription) {
+          const parentWidth = parent.offsetWidth;
+          const elementWidth = element.scrollWidth;
+
+          if (elementWidth > parentWidth * 0.95) {
+            element.style.whiteSpace = "normal";
+            element.style.wordWrap = "break-word";
+            element.style.overflowWrap = "break-word";
+          }
+        }
+
+        // For form descriptions, ensure they always wrap properly
+        if (isFormDescription) {
+          const containerWidth = element.offsetParent
+            ? element.offsetParent.offsetWidth
+            : window.innerWidth;
+          const maxWidth = Math.min(600, containerWidth - 40); // 20px padding on each side
+
+          if (element.scrollWidth > maxWidth) {
+            element.style.whiteSpace = "normal";
+            element.style.maxWidth = maxWidth + "px";
+          }
+        }
+
         setTimeout(() => {
           this.typeText(element, text, index + 1);
         }, 50); // Typing speed
+      } else {
+        // When typing is complete, ensure final responsive adjustments
+        this.adjustTypingTextResponsive(element);
       }
+    },
+    adjustTypingTextResponsive(element) {
+      // Final adjustments after typing is complete
+      const parent = element.closest(
+        ".section-title, .main-title, .form-title"
+      );
+      if (parent) {
+        const parentWidth = parent.offsetWidth;
+        const elementWidth = element.scrollWidth;
+
+        if (elementWidth > parentWidth * 0.95) {
+          element.style.whiteSpace = "normal";
+          element.style.wordWrap = "break-word";
+          element.style.overflowWrap = "break-word";
+          element.style.hyphens = "auto";
+        }
+      }
+
+      // Ensure cursor position is correct
+      element.style.position = "relative";
+      element.style.display = "inline-block";
     },
     initScrollAnimations() {
       this.scrollObserver = new IntersectionObserver(
@@ -453,6 +662,17 @@ export default {
 
       if (formCard) this.scrollObserver.observe(formCard);
       formRows.forEach((row) => this.scrollObserver.observe(row));
+    },
+    handleResize() {
+      // Debounce resize events
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = setTimeout(() => {
+        // Re-adjust all typing text elements on resize
+        const typingElements = document.querySelectorAll(".typing-text");
+        typingElements.forEach((element) => {
+          this.adjustTypingTextResponsive(element);
+        });
+      }, 250);
     },
   },
 };
@@ -579,18 +799,35 @@ export default {
 .typing-text {
   display: inline-block;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   white-space: nowrap;
+  min-width: fit-content;
+  width: auto;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .typing-text::after {
   content: "|";
   position: absolute;
   right: -4px;
+  top: 0;
   color: #3b82f6;
   font-weight: bold;
   animation: blink 1.2s infinite;
   text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  white-space: nowrap;
+}
+
+/* Hide cursor for "NO MORE FLOP" title */
+.title-line-1.typing-text::after {
+  display: none;
+}
+
+/* Hide cursor for "NO MORE FLOP" title */
+.title-line-2.typing-text::after {
+  display: none;
 }
 
 @keyframes blink {
@@ -609,15 +846,74 @@ export default {
 /* Typing animation with staggered delays */
 .typing-text[data-text] {
   animation: typingReveal 0.1s steps(1) forwards;
+  max-width: 100%;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 @keyframes typingReveal {
   from {
     width: 0;
+    min-width: 0;
   }
   to {
-    width: 100%;
+    width: auto;
+    min-width: fit-content;
   }
+}
+
+/* Responsive typography for different languages */
+.typing-text {
+  font-size: inherit;
+  line-height: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+}
+
+/* Language-specific adjustments */
+html[lang="vi"] .typing-text {
+  word-spacing: 0.1em;
+  letter-spacing: 0.02em;
+}
+
+html[lang="en"] .typing-text {
+  word-spacing: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Flexible container for titles */
+.section-title,
+.main-title,
+.form-title {
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure typing text containers are flexible */
+.section-title .typing-text,
+.main-title .typing-text,
+.form-title .typing-text {
+  max-width: 100%;
+  width: auto;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+/* Specific handling for form description typing text */
+.form-description.typing-text {
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 15px;
+  overflow: visible;
 }
 
 /* Scroll-triggered animations for form elements */
@@ -1002,13 +1298,18 @@ export default {
 
 .section-title {
   font-family: "Inter", sans-serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   color: #1e293b;
   margin: 0 0 20px 0;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  width: 100%;
+  max-width: 100%;
 }
 
 .section-subtitle {
@@ -1075,6 +1376,12 @@ export default {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+  hyphens: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 /* Form Fields Layout */
@@ -1325,12 +1632,22 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .title-line-1,
 .title-line-2 {
   display: block;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .title-line-1 {
@@ -1751,7 +2068,22 @@ export default {
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  }
+
+  .main-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  /* Enhanced text wrapping for longer content */
+  .typing-text {
+    word-spacing: 0.05em;
+    letter-spacing: 0.01em;
+  }
+
+  html[lang="vi"] .typing-text {
+    word-spacing: 0.08em;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -1761,7 +2093,8 @@ export default {
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    line-height: 1.3;
   }
 
   .section-subtitle {
@@ -1773,11 +2106,40 @@ export default {
   }
 
   .form-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    line-height: 1.3;
   }
 
   .form-description {
     font-size: 1rem;
+    line-height: 1.5;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto 30px auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .form-description.typing-text {
+    white-space: normal !important;
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  /* Enhanced Vietnamese text handling */
+  html[lang="vi"] .section-title,
+  html[lang="vi"] .form-title,
+  html[lang="vi"] .main-title {
+    line-height: 1.4;
+    word-spacing: 0.1em;
+    letter-spacing: 0.03em;
+  }
+
+  html[lang="vi"] .typing-text {
+    word-spacing: 0.12em;
+    letter-spacing: 0.04em;
   }
 
   /* Form card padding for smaller screens */
@@ -1910,6 +2272,19 @@ export default {
 
   .form-title {
     font-size: 1.6rem;
+  }
+
+  .form-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto 25px auto;
+  }
+
+  .form-description.typing-text {
+    padding: 0 10px;
+    white-space: normal !important;
   }
 
   .submit-btn {

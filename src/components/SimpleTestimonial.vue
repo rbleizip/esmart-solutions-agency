@@ -28,7 +28,7 @@
       <!-- Testimonials Grid -->
       <div class="testimonials-grid">
         <div
-          v-for="(testimonial, index) in $t('simpleComponents.testimonials')"
+          v-for="(testimonial, index) in testimonials"
           :key="index"
           class="testimonial-card flat-card slide-up-element"
           :data-delay="0.8 + index * 0.1"
@@ -57,9 +57,62 @@
 <script>
 export default {
   name: "SimpleTestimonial",
+  computed: {
+    testimonials() {
+      // Force reactivity by accessing $i18n.locale
+      const currentLocale = this.$i18n.locale;
+      console.log("Current locale:", currentLocale);
+
+      // Get testimonials from translation data using a more specific approach
+      try {
+        // Try to access the testimonials directly from the messages
+        const messages = this.$i18n.messages[currentLocale];
+        console.log("Messages available:", !!messages);
+
+        if (
+          messages &&
+          messages.simpleComponents &&
+          messages.simpleComponents.testimonials
+        ) {
+          const testimonials = messages.simpleComponents.testimonials;
+          console.log("Direct testimonials access:", testimonials);
+          console.log("Is array:", Array.isArray(testimonials));
+          console.log("Length:", testimonials?.length);
+
+          if (Array.isArray(testimonials) && testimonials.length > 0) {
+            return testimonials;
+          }
+        }
+
+        // Fallback to $t method
+        const translatedTestimonials = this.$t("simpleComponents.testimonials");
+        console.log("$t testimonials:", translatedTestimonials);
+
+        if (
+          Array.isArray(translatedTestimonials) &&
+          translatedTestimonials.length > 0
+        ) {
+          return translatedTestimonials;
+        }
+      } catch (error) {
+        console.error("Error getting testimonials from translations:", error);
+      }
+
+      // Fallback to hardcoded data if translation not available
+      console.log("Using fallback testimonials");
+      return this.fallbackTestimonials;
+    },
+  },
+  watch: {
+    // Watch for language changes and force re-render
+    "$i18n.locale"() {
+      console.log("Language changed, testimonials should update");
+      this.$forceUpdate();
+    },
+  },
   data() {
     return {
-      testimonials: [
+      fallbackTestimonials: [
         {
           text: "ESmart Solutions helped us increase website traffic by 300% and online revenue by 150%. The team is extremely professional!",
           name: "John Smith",
@@ -254,21 +307,25 @@ export default {
 
 .testimonial-content {
   position: relative;
+  padding-top: 25px; /* Add padding to prevent overlap with quote icon */
+  padding-right: 25px; /* Add padding to prevent overlap on the right */
 }
 
 .quote-icon {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 50px;
-  height: 50px;
+  top: 0px; /* Adjust to stay within the padding area */
+  right: 0px; /* Adjust to stay within the padding area */
+  width: 40px; /* Slightly smaller to reduce overlap */
+  height: 40px;
   background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #3b82f6;
-  font-size: 20px;
+  font-size: 16px; /* Smaller font size */
+  z-index: 1; /* Keep it above other content */
+  opacity: 0.7; /* Slightly more transparent */
 }
 
 .testimonial-text {
