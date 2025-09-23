@@ -88,33 +88,17 @@
 
       <!-- Trust Indicators -->
       <div class="trust-indicators">
-        <div class="trust-item">
+        <div
+          v-for="(indicator, index) in trustIndicators"
+          :key="index"
+          class="trust-item"
+        >
           <div class="trust-icon">
-            <i class="fas fa-users"></i>
+            <i :class="indicator.icon"></i>
           </div>
           <div class="trust-content">
-            <h3 class="trust-number">500+</h3>
-            <p class="trust-label">Trusted Customers</p>
-          </div>
-        </div>
-
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-project-diagram"></i>
-          </div>
-          <div class="trust-content">
-            <h3 class="trust-number">1000+</h3>
-            <p class="trust-label">Successful Projects</p>
-          </div>
-        </div>
-
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="trust-content">
-            <h3 class="trust-number">98%</h3>
-            <p class="trust-label">Satisfaction Rate</p>
+            <h3 class="trust-number">{{ indicator.number }}</h3>
+            <p class="trust-label">{{ indicator.label }}</p>
           </div>
         </div>
       </div>
@@ -125,6 +109,49 @@
 <script>
 export default {
   name: "SimpleSocialProof",
+  computed: {
+    // Get current translation texts for trust indicators
+    trustIndicators() {
+      return [
+        {
+          icon: "fas fa-users",
+          number: this.$t(
+            "simpleComponents.socialProof.trustIndicators.trustedCustomers.number"
+          ),
+          label: this.$t(
+            "simpleComponents.socialProof.trustIndicators.trustedCustomers.label"
+          ),
+        },
+        {
+          icon: "fas fa-project-diagram",
+          number: this.$t(
+            "simpleComponents.socialProof.trustIndicators.successfulProjects.number"
+          ),
+          label: this.$t(
+            "simpleComponents.socialProof.trustIndicators.successfulProjects.label"
+          ),
+        },
+        {
+          icon: "fas fa-star",
+          number: this.$t(
+            "simpleComponents.socialProof.trustIndicators.satisfactionRate.number"
+          ),
+          label: this.$t(
+            "simpleComponents.socialProof.trustIndicators.satisfactionRate.label"
+          ),
+        },
+      ];
+    },
+  },
+  watch: {
+    // Watch for language changes
+    "$i18n.locale"() {
+      console.log(
+        "Language changed in SimpleSocialProof, trust indicators will update"
+      );
+      this.$forceUpdate();
+    },
+  },
   data() {
     return {
       slidePosition: 0,

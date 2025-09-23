@@ -695,7 +695,21 @@
       }
     },
     "socialProof": {
-      "title": "OUR AMAZING CUSTOMERS & PARTNERS"
+      "title": "OUR AMAZING CUSTOMERS & PARTNERS",
+      "trustIndicators": {
+        "trustedCustomers": {
+          "number": "500+",
+          "label": "Trusted Customers"
+        },
+        "successfulProjects": {
+          "number": "1000+",
+          "label": "Successful Projects"
+        },
+        "satisfactionRate": {
+          "number": "98%",
+          "label": "Satisfaction Rate"
+        }
+      }
     },
     "testimonials": [
       {

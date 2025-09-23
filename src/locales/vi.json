@@ -450,7 +450,21 @@
       }
     },
     "socialProof": {
-      "title": "ĐỐI TÁC VÀ KHÁCH HÀNG TUYỆT VỜI CỦA CHÚNG TÔI"
+      "title": "ĐỐI TÁC VÀ KHÁCH HÀNG TUYỆT VỜI CỦA CHÚNG TÔI",
+      "trustIndicators": {
+        "trustedCustomers": {
+          "number": "500+",
+          "label": "Khách hàng Tin tưởng"
+        },
+        "successfulProjects": {
+          "number": "1000+",
+          "label": "Dự án Thành công"
+        },
+        "satisfactionRate": {
+          "number": "98%",
+          "label": "Tỷ lệ Hài lòng"
+        }
+      }
     },
     "testimonials": [
       {
