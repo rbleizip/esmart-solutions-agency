@@ -363,13 +363,6 @@
               }}</span>
               <div class="wave-effect"></div>
             </button>
-
-            <button class="secondary-cta-button" @click="startAssessment">
-              <span>{{
-                $t("simpleComponents.brandingPerformance.secondaryCta")
-              }}</span>
-              <i class="fas fa-arrow-up"></i>
-            </button>
           </div>
         </div>
       </div>
