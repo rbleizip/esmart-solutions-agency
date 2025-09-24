@@ -14,6 +14,41 @@
     "start": "Bắt đầu",
     "project": "Dự án"
   },
+  "auth": {
+    "signInTitle": "Cổng đăng nhập",
+    "signUpTitle": "Tạo tài khoản mới",
+    "welcomeNew": "Lần đầu tới đây?",
+    "welcomeSubtitle": "Khám phá đổi mới số và những khả năng vô hạn cùng ESmart Solutions!",
+    "ctaGetStarted": "Bắt đầu hành trình",
+    "socialLogin": "Đăng nhập qua mạng xã hội",
+    "socialSignup": "Đăng ký qua mạng xã hội",
+    "emailPlaceholder": "Địa chỉ email",
+    "passwordPlaceholder": "Mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu",
+    "fullNamePlaceholder": "Họ và tên",
+    "googleSignIn": "Đăng nhập Google",
+    "googleSignUp": "Tiếp tục với Google",
+    "or": "HOẶC",
+    "haveAccount": "Đã có tài khoản?",
+    "noAccount": "Chưa có tài khoản?",
+    "btnSignIn": "Đăng nhập",
+    "btnSignUp": "Đăng ký",
+    "processing": "Đang xử lý...",
+    "creating": "Đang tạo...",
+    "errors": {
+      "passwordMismatch": "Mật khẩu không khớp",
+      "wrongPassword": "Sai mật khẩu. Vui lòng thử lại.",
+      "userNotFound": "Không tìm thấy tài khoản với email này.",
+      "invalidEmail": "Định dạng email không hợp lệ.",
+      "popupClosed": "Cửa sổ Google đã bị đóng.",
+      "genericLogin": "Đăng nhập thất bại. Vui lòng thử lại.",
+      "emailInUse": "Email đã được đăng ký",
+      "operationNotAllowed": "Thao tác không được phép",
+      "weakPassword": "Mật khẩu quá yếu",
+      "popupBlocked": "Trình duyệt đã chặn popup",
+      "genericSignup": "Đăng ký thất bại. Vui lòng thử lại."
+    }
+  },
   "sections": {
     "coreValues": "Giá Trị Cốt Lõi",
     "outstandingAchievements": "Thành Tựu Nổi Bật",
@@ -84,7 +119,6 @@
   "achievements": "Thành tựu",
   "blogPage1": "Trang Blog 1",
   "products": "Sản phẩm",
-  "AboutUs": "Về Chúng Tôi",
   "Process": "Quy trình",
   "signIn": "Đăng nhập",
   "AboutUs": {
@@ -121,61 +155,7 @@
       "button": "Trò chuyện với nhóm hỗ trợ"
     }
   },
-  "process": {
-    "title": "Quy trình của chúng tôi",
-    "steps": [
-      {
-        "title": "Bước 1: Tư vấn và lập kế hoạch",
-        "subsSteps": [
-          {
-            "title": "Phân tích thị trường - khách hàng mục tiêu."
-          },
-          {
-            "title": "Xây dựng customer insight"
-          },
-          {
-            "title": "Lên kế hoạch triển khai theo tháng, có mục tiêu rõ ràng."
-          }
-        ]
-      },
-      {
-        "title": "Bước 2: Ký kết hợp đồng",
-        "subsSteps": [
-          {
-            "title": "Ký hợp đồng với gói dịch vụ phù hợp, đảm bảo điều khoản đều minh bạch, rõ ràng."
-          }
-        ]
-      },
-      {
-        "title": "Bước 3: Triển khai Dịch vụ",
-        "subsSteps": [
-          {
-            "title": "Tạo nhóm trao đổi và giám sát công việc."
-          },
-          {
-            "title": "Lên kế hoạch nội dung hàng tháng, trình khách hàng phê duyệt."
-          },
-          {
-            "title": "Thiết kế hình ảnh, sản xuất video, triển khai các chiến dịch quảng cáo."
-          }
-        ]
-      },
-      {
-        "title": "Bước 4: Báo cáo và đánh giá",
-        "subsSteps": [
-          {
-            "title": "Báo cáo kết quả cuối tháng, đưa ra điều chỉnh cần thiết."
-          },
-          {
-            "title": "Thu thập phản hồi khách hàng, hỗ trợ khách hàng trong quá trình sử dụng."
-          }
-        ]
-      }
-    ],
-    "modal": {
-      "close": "Đóng"
-    }
-  },
+
   "features": {
     "title": "Thành tựu",
     "achievements": [

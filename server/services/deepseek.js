@@ -2,7 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 const { TrendData } = require("../models");
 
-const API_KEY = process.env.DEEPSEEK_API_KEY;
+const API_KEY = process.env.GEMINI_API_KEY;
 const API_URL =
   process.env.OPENROUTER_API_URL ||
   "https://openrouter.ai/api/v1/chat/completions";
